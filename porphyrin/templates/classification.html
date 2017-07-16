@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Classification result for "{{ atc_code }}"</h2>
+<strong>{{ result.name }}</strong>
+<p>{{ result.description }}</strong>
+<hr />
+<p>
+    <strong>Source</strong>
+    <a href="/">http://www.drugs-porphyria.org/</a>
+</p>
+{% endblock %}

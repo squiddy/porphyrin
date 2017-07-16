@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+        <title>porphyrin</title>
+    </head>
+    <body>
+        <h1><a href="/">porphyrin</a></h1>
+        <form action="/classification/lookup/">
+            <input type="text" name="atc_code" placeholder="ATC code" value="{{ request.args.atc_code }}" required />
+            <input type="submit" />
+        </form>
+        <hr />
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
