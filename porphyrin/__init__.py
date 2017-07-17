@@ -15,6 +15,7 @@ with open(DATA_FILE) as f:
 
 import porphyrin.views
 
+
 @app.cli.command()
 @click.argument('filename')
 def convert_atc_data(filename):

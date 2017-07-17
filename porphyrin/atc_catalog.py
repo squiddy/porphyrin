@@ -4,7 +4,6 @@ See https://en.wikipedia.org/wiki/Anatomical_Therapeutic_Chemical_Classification
 
 import csv
 import json
-import os
 from typing import Union, TextIO
 
 
@@ -70,10 +69,10 @@ class AtcCode:
 class Catalog:
     def __init__(self):
         self.entries = {}
-    
+
     def load(self, file: TextIO):
         self.entries = json.load(file)
-    
+
     def lookup(self, code: str) -> Union[None, AtcCode, AtcGroup]:
         match = self.entries.get(code)
         if not match:
@@ -104,5 +103,5 @@ def convert_data(source_file: TextIO, target_file: TextIO):
         atc_code = row[0].strip()
         name = row[2].strip().replace('\n', '')
         entries[atc_code] = name
-    
+
     json.dump(entries, target_file)
