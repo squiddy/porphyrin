@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Classification result for "{{ atc_code }}"</h2>
+<h2>Classification result for "{{ atc_code.code }}"</h2>
 <strong>{{ result.name }}</strong>
 <p>{{ result.description }}</strong>
 <hr />
@@ -9,4 +9,29 @@
     <strong>Source</strong>
     <a href="/">http://www.drugs-porphyria.org/</a>
 </p>
+<hr />
+<h3>ATC</h3>
+
+<ol>
+    <li>
+        {{ atc_code.first_group.code }}
+        {{ atc_code.first_group.name }}
+    </li>
+    <li>
+        {{ atc_code.second_group.code }}
+        {{ atc_code.second_group.name }}
+    </li>
+    <li>
+        {{ atc_code.third_group.code }}
+        {{ atc_code.third_group.name }}
+    </li>
+    <li>
+        {{ atc_code.fourth_group.code }}
+        {{ atc_code.fourth_group.name }}
+    </li>
+    <li>
+        {{ atc_code.code }}
+        {{ atc_code.name }}
+    </li>
+</ol>
 {% endblock %}
